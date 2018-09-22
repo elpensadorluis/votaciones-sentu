@@ -1,0 +1,84 @@
+body {
+    margin-top: 50px;
+}
+
+.container-fluid,
+#total {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 20px;
+    padding-left: 80px;
+    width: 600px;
+    margin: 10px auto;
+    border-radius: 10px;
+    text-align: center;
+    -webkit-box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+#total {
+    width: 500px;
+    background-color: #A1D490;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+.candidato {
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+}
+
+.candidato p{
+    color: green;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding-top: 10px;
+    height: 60px;
+}
+
+.badge{
+    background-color: #31708f;
+    font-size: 14px;
+    padding: 5px 8px;
+    text-align: center;
+    color: #f2f2f2;
+}
+
+#total .badge {
+    background-color: #dff0d8;
+    font-size: 20px;
+    color: #606060;
+}
+
+.voteApp {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.grafica {
+    width: 600px;
+    height: 512px;
+    float: left;
+    padding-right: 10px;
+    text-align: center;
+}
+
+.grafica h1{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.grafica button{
+    margin-top: 20px;
+}
+
+.center{
+    width: 1220px;
+    margin: 0 auto;
+}

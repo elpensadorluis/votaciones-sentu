@@ -1,0 +1,22 @@
+{
+    "candidato1": {
+        "nombre": "candidato1",
+        "partido": "uno",
+        "votos": 0
+    },
+    "candidato2": {
+        "nombre": "candidato2",
+        "partido": "dos",
+        "votos": 0
+    },
+    "candidato3": {
+        "nombre": "candidato3",
+        "partido": "tres",
+        "votos": 0
+    },
+    "candidato4": {
+        "nombre": "candidato4",
+        "partido": "cuatro",
+        "votos": 0
+    }
+}
