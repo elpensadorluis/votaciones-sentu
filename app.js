@@ -1,7 +1,12 @@
 var myFirebaseRef;
 var chart;
-var chartData = [];
-var candidatos;
+var chartData = [
+    ['candidato1', 50],
+    ['candidato2', 30],
+    ['candidato3', 144],
+    ['candidato4',1]
+];
+
 
 
 
@@ -21,7 +26,7 @@ $(document).ready(function () {
     //Petición de datos.
     database.ref('/').on('value', (sanpshot) => {
         // console.log('Los datos han cambiado', JSON.stringify(sanpshot.val(), null, 2));
-        candidatos = sanpshot.val();
+        var candidatos = sanpshot.val();
         var votoTotal = 0;
         for (var candidato in candidatos) {
             // console.log(candidato, candidatos[candidato].votos, candidatos[candidato]);
