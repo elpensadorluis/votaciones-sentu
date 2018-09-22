@@ -17,53 +17,33 @@ $(document).ready(function () {
     };
     firebase.initializeApp(config);
     const database = firebase.database();
-    
+
+    //Petición de datos.
     database.ref('/').on('value', (sanpshot) => {
-        console.log('Los datos han cambiado', JSON.stringify(sanpshot.val(), null, 2));
+        // console.log('Los datos han cambiado', JSON.stringify(sanpshot.val(), null, 2));
         candidatos = sanpshot.val();
         var votoTotal = 0;
-        for(var candidato in candidatos){
-            console.log(candidato, candidatos[candidato].votos, candidatos[candidato]);
-            $("#votos_"+candidato + " span").text(candidatos[candidato].votos);
+        for (var candidato in candidatos) {
+            // console.log(candidato, candidatos[candidato].votos, candidatos[candidato]);
+            $("#votos_" + candidato + " span").text(candidatos[candidato].votos);
             votoTotal += Number(candidatos[candidato].votos);
-            
+
         }
-        console.log(votoTotal);
+        // console.log(votoTotal);
         $("#total span").html(votoTotal);
     });
 
-    $('#canditato1').click(function () {
-        var vote = candidatos.candidato1.votos + 1;
+    $("#candidato2, #candidato1, #candidato3, #candidato4").click(function () {
+        // $("button[id^='candidato']").click(function () {
+        var choice = this.id;
+        var voteCount = $('#votos_' + choice + ' span').text();
+        console.log(voteCount);
+        $("#" + choice).prop("disabled", true);
         database.ref()
-            .child('candidato1')
+            .child(choice)
             .child('votos')
-            .set(vote);
-        console.log("funciona");
+            .set(++voteCount);
+        $("#" + choice).prop("disabled", false);
+        console.log("votaste por " + choice + " y lleva " + voteCount);
     });
-    $('#canditato2').click(function () {
-        var vote = candidatos.candidato2.votos + 1;
-        database.ref()
-            .child('candidato2')
-            .child('votos')
-            .set(vote);
-        console.log("funciona");
-    });
-    $('#canditato3').click(function () {
-        var vote = candidatos.candidato3.votos + 1;
-        database.ref()
-            .child('candidato3')
-            .child('votos')
-            .set(vote);
-        console.log("funciona");
-    });
-    $('#canditato4').click(function () {
-        var vote = candidatos.candidato4.votos + 1;
-        database.ref()
-            .child('candidato4')
-            .child('votos')
-            .set(vote);
-        console.log("funciona");
-    });
-
 });
-
