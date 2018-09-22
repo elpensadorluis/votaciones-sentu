@@ -25,11 +25,11 @@ $(document).ready(function () {
         for(var candidato in candidatos){
             console.log(candidato, candidatos[candidato].votos, candidatos[candidato]);
             $("#votos_"+candidato + " span").text(candidatos[candidato].votos);
-            votoTotal += candidatos[candidato].votos;
+            votoTotal += Number(candidatos[candidato].votos);
             
         }
         console.log(votoTotal);
-        $("#total span").text(votoTotal);
+        $("#total span").html(votoTotal);
     });
 
     $('#canditato1').click(function () {
@@ -67,16 +67,3 @@ $(document).ready(function () {
 
 });
 
-function impri() {
-    console.log("funciona");
-}
-// var impri = function() {
-//     console.log("funciona");
-// }
-var vote = function () {
-    var vote = 256;
-    database.ref()
-        .child('candidato1')
-        .child('votos')
-        .update(vote);
-}
