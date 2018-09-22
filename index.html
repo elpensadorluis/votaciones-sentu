@@ -12,6 +12,8 @@
     <!-- Load c3.css -->
     <link href="/libs/c3.css rel=" stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -40,16 +42,10 @@
 
 <body>
     <div class="row">
-        <div class="col">
-            <div class="grafica">
-                <h1>Sistema de Votaciones</h1>
-                <div id="chart"></div>
-            </div>
 
-        </div>
         <div class="col">
             <div class="container">
-            <div class="voteApp">
+                <div class="voteApp">
                     <div class="candidato">
                         <button id="candidato1" type="button" class="btn btn-primary btn-lg">Candidato1</button>
                         <p id="votos_candidato1" class="alert alert-primary">
@@ -80,10 +76,29 @@
                     </div>
                 </div>
             </div>
-                    <div id="total">
-                        <span class="badge">0</span>
-                        <br> Total de votos emitidos
-                    </div>
+            <div id="total">
+                <span class="badge">0</span>
+                <br> Total de votos emitidos
+            </div>
+        </div>
+        <div class="col">
+            <div class="grafica">
+                <h1>Sistema de Votaciones</h1>
+                <div id="chart"></div>
+                <button id="bar" type="button" class="btn btn-success">
+                    <span class="far fa-chart-bar"></span>
+                    Gráfica de Barras
+                </button>
+                <button id="pie" class="btn btn-success">
+                    <span class="fas fa-chart-pie"></span>
+                    Gráfica Circular o de tarta
+                </button>
+                <button id="donut" class="btn btn-success">
+                    <span class="fas fa-dot-circle"></span>
+                    Gráfica de Dona
+                </button>
+            </div>
+
         </div>
 
     </div>
